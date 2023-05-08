@@ -5,9 +5,13 @@ import { accessControllVerify } from "../middlewares/accessControllMidlleware";
 
 const roleRoutes = Router()
 
-roleRoutes.post('/', accessControllVerify(['admin']), roleCreate)
-roleRoutes.post('/assign', accessControllVerify(['admin']), acAssign)
-roleRoutes.get('/', accessControllVerify(['admin']), viewRoles)
+// roleRoutes.post('/', accessControllVerify(['admin']), roleCreate)
+// roleRoutes.post('/assign', accessControllVerify(['admin']), acAssign)
+// roleRoutes.get('/', accessControllVerify(['admin']), viewRoles)
+
+roleRoutes.post('/', roleCreate)
+roleRoutes.post('/assign', acAssign)
+roleRoutes.get('/', viewRoles)
 
 
 export { roleRoutes }
