@@ -11,24 +11,16 @@ import { userRoutes } from "./user.routes"
 
 const routes = Router()
 
-// routes.use('/users', authMiddleware, userRoutes)
-// routes.use('/events', authMiddleware, eventRoutes)
-// routes.use('/team', authMiddleware, teamRoutes)
-// routes.use('/roles', authMiddleware, roleRoutes)
+routes.use('/users', authMiddleware, userRoutes)
+routes.use('/events', authMiddleware, eventRoutes)
+routes.use('/team', authMiddleware, teamRoutes)
+routes.use('/roles', authMiddleware, roleRoutes)
 
-// routes.post('/login', AuthController)
-// routes.post('/validate',authMiddleware, ValidateController)
+routes.post('/login', AuthController)
+routes.post('/validate',authMiddleware, ValidateController)
 
-// routes.get('/dashboard', authMiddleware, DashboardController)
+routes.get('/dashboard', authMiddleware, DashboardController)
 
-routes.use('/users', userRoutes)
-routes.use('/events', eventRoutes)
-routes.use('/team', teamRoutes)
-routes.use('/roles', roleRoutes)
 
-routes.post('/login')
-routes.post('/validate', ValidateController)
-
-routes.get('/dashboard', DashboardController)
 
 export { routes }
